@@ -1,0 +1,49 @@
+﻿@model  PagedList.IPagedList<MyMuse.Models.Artist>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index by Artist";
+}
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+<div class="row">
+    <div class="text-right">
+        @Html.PagedListPager(Model, page => Url.Action("idxArtist", new { page }))
+        @* Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount *@
+    </div>
+</div>
+
+<div class="wrapping fragment">
+        <div id="wrappingFlexbox">
+
+            @foreach (var item in Model)
+            {
+                <div style="background-color: lightgray" >
+                    <h4><b>
+                        @item.ArtArtist</b>
+                    </h4>
+                </div>
+                foreach (var album in item.ArtAlbum)
+                {
+                    <div>
+                        <figure>
+                            <a href="@Url.Action("oneAlbum", "OneMusic", new { ID = album.AlbumGuid})">
+                                @*<img src= "@WMPCover(album.AlbumArtUrl)" alt=Helper>*@
+                                <img src="@Url.Action("Thumbnail", "OneMusic", new{original=album.AlbumArtUrl,ht=100,wd=100})" alt="no image" />
+                                @*<img src="file://@item.AlbumArtUrl" alt=@item.AlbumArtUrl>*@
+                            </a>
+                            <figcaption>
+                                <small>
+                                    @album.AlbumName
+                                </small>
+                            </figcaption>
+                        </figure>
+                    </div>
+                }
+            }
+        </div>
+        <div class="row">
+            <p class="text-right">
+                Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+            </p>
+        </div>
+</div>

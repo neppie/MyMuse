@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+@{
+    string[] letters = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K",
+                     "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V",
+                     "W", "X", "Y", "Z", "All"};
+}
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @*@Styles.Render("~/Content/themes/base/css")*@
+    @Scripts.Render("~/bundles/modernizr")
+
+    <link href="~/Content/button.css" rel="stylesheet" />
+    <link href="~/Content/fancy.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-social.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("MyMuse", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    @*<li>@Html.ActionLink("LOAD", "Index", "OneMusic")</li>*@
+                    <li>@Html.ActionLink("CONVO", "Chat", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>        
+                @Html.Partial("_LoginPartial")              
+            </div>
+        </div>
+    </div>
+
+    <div class="distributed fragment">
+        <section class="backinblack">
+            <div id="flexbodDistribute">
+               <div>
+                   <button class="btn-Facebook btn-success fa fa-cloud-upload" id="DL" style="align-content:flex-start"
+                      onclick="javacript: NYI">UL
+                   </button>
+                   <button class="btn-Facebook btn-success fa fa-cloud-download" id="DL" style="align-content:flex-start"
+                      onclick="javacript: NYI">DL
+                   </button>
+               </div> 
+               <div>
+                <a type ="button" class="btn btn-primary" href="@Url.Action("idxAlbum", "OneMusic")">
+                Browse by Album  <i class="fa fa-music"></i></a>
+                </div>
+                <div>
+                    <a type="button" class="btn btn-primary"  href="@Url.Action("idxArtist", "OneMusic")">
+                        or Artist  <i class="fa fa-user"></i>
+                    </a>
+                </div>
+                    <div class="MP3-search">
+                        <form action="@Url.Action(ViewBag.Sort, "OneMusic", new { @ViewBag.xfilter })" method="get">
+                            <input id="xfilter" name="xfilter" type="text" value="@ViewBag.xfilter" />
+                            <input type="submit" value="filter" />
+                            <i class="fa fa-search-minus" style="color:lightgray"></i>
+                        </form>
+                    </div>
+</div>
+        </section>
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p></p>
+        </footer>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @*@Scripts.Render("~/bundles/jqueryui")*@
+    @RenderSection("scripts", required: false)
+</body>
+</html>

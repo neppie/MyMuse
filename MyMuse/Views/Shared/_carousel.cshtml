@@ -1,0 +1,39 @@
+﻿@model  List<MyMuse.Models.Album>
+
+<div class='row'>
+    <div class='col-md-12'>
+        <div class="carousel slide media-carousel" id="media">
+            <div class="carousel-inner">
+                @{
+                    var items = Model.Take(4);
+
+                    var iterations = 0;
+                }
+                @while (items.Count() > 0)
+                {
+                    var active = iterations == 0 ? "active" : "";
+
+                    <div class="item @active">
+                        <div class="row">
+                            @foreach (var item in items)
+                            {
+                                <div class="col-md-3">
+                                    <img src="@Url.Action("WMPImage", "OneMusic", new {fn = item.AlbumArtUrl})" alt="no image" />
+                                    @item.AlbumName
+                                </div>
+                            }
+                        </div>
+                    </div>
+                            iterations++;
+                            items = Model.Skip(4 * iterations).Take(4);
+                }
+            </div>
+            <a data-slide="prev" href="#media" class="left carousel-control">
+                <span class="fa fa-chevron-left fa-3x" style="color:lightgreen"></span>
+            </a>
+            <a data-slide="next" href="#media" class="right carousel-control">
+                <span class="fa fa-chevron-right fa-3x" style="color: lightgreen"></span>
+            </a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+@{   
+    string[] letters = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K",
+                     "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V",
+                     "W", "X", "Y", "Z", "All"};
+                     }
+                    
+  <div class="btn-group">
+    <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+      Jump-to
+      <span class="caret"></span>
+    </button>
+
+<ul class="dropdown-menu" role="menu">
+    @for (int i = 0; i < 26; i++)
+    {
+        <li><a href="#" style="font-size: x-small">@letters[i]</a></li>
+    }
+</ul>
+  </div>                
+ 

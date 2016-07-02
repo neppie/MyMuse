@@ -1,0 +1,98 @@
+﻿/*
+	CREATED BY: Brandon Setter
+	WEBSITE: http://Media-Sprout.com
+	DATE: 10/2009
+	Please give me a shout-out if you like and use this code ;-)
+*/
+
+
+/* DISREGARD THIS PAGE STYLING *****************************/
+
+/*p, hr, h1, h2, h3					{margin: 10px 0 10px; }
+#wrapper							{margin: 0 auto; width: 600px;}
+.code								{margin: 0 0 10px 0; padding: 15px; border: 2px solid #999;}*/
+th {
+    /*background-color: black;*/
+    color: lightyellow;
+}
+
+/* BUTTON STYLING FROM HERE DOWN *****************************/
+
+div.clearbutton {
+    clear: both;
+    height: 0;
+    font-size: 1px;
+    line-height: 1px;
+    /*background-color: black;*/
+    color: lightblue;
+
+}
+
+
+/* GLOBAL RED BUTTON *****************************/
+a.GlobalRedButton span 				{background: transparent url('/Content/button_left_red.png') no-repeat 0 0; display: block; 
+									line-height: 22px; padding: 7px 0 5px 18px; color: #fff;} 								
+a.GlobalRedButton 					{background: transparent url('/Content/button_right_red.png') no-repeat top right; 
+									display: block;	float: left; height: 34px; margin-right: 6px; 
+									padding-right: 20px; text-decoration: none; font-family: Arial, Helvetica, sans-serif; 
+									font-size:12px; font-weight:bold;}
+a.GlobalRedButton:hover span		{background-position: 0 -34px; color: #fff;}
+a.GlobalRedButton:hover				{background-position: right -34px;}
+
+
+
+
+/* GLOBAL BLUE BUTTON *****************************/
+a.GlobalBlueButton span 			{background: transparent url('/Content/button_left_blue.png') no-repeat 0 0; display: block; 
+									line-height: 22px; padding: 7px 0 5px 18px; color: #fff;} 								
+a.GlobalBlueButton 					{background: transparent url('/Content/button_right_blue.png') no-repeat top right; 
+									display: block;	float: left; height: 34px; margin-right: 6px; 
+									padding-right: 20px; text-decoration: none; font-family: Arial, Helvetica, sans-serif; 
+									font-size:12px; font-weight:bold;}
+a.GlobalBlueButton:hover span		{background-position: 0 -34px; color: #fff;}
+a.GlobalBlueButton:hover			{background-position: right -34px;}
+
+
+/* GLOBAL ORANGE BUTTON *****************************/
+a.GlobalOrangeButton span 			{background: transparent url('/Content/button_left_orange.png') no-repeat 0 0; display: block; 
+									line-height: 22px; padding: 7px 0 5px 18px; color: #fff;} 								
+a.GlobalOrangeButton 				{background: transparent url('/Content/button_right_orange.png') no-repeat top right; 
+									display: block;	float: left; height: 34px; margin-right: 6px; 
+									padding-right: 20px; text-decoration: none; font-family: Arial, Helvetica, sans-serif; 
+									font-size:12px; font-weight:bold;}
+a.GlobalOrangeButton:hover span		{background-position: 0 -34px; color: #fff;}
+a.GlobalOrangeButton:hover			{background-position: right -34px;}
+
+
+
+/* GLOBAL BLACK BUTTON *****************************/
+a.GlobalBlackButton span 			{background: transparent url('/Content/button/button_left_black.png') no-repeat 0 0; display: block; 
+									line-height: 22px; padding: 7px 0 5px 18px; } 								
+a.GlobalBlackButton 				{background: transparent url('/Content/button/button_right_black.png') no-repeat top right; 
+									display: block;	float:left; height: 34px; margin-right: 6px; 
+									padding-right: 20px; text-decoration: none; font-family: Arial, Helvetica, sans-serif; 
+									font-size:12px; font-weight:bold;}
+a.GlobalBlackButton:hover span		{background-position: 0 -34px; }
+a.GlobalBlackButton:hover			{background-position: right -34px;}
+
+/* GLOBAL BLACK BUTTON FLOAT RIGHT *****************************/
+a.RGlobalBlackButton span 			{background: transparent url('/Content/button/button_left_black.png') no-repeat 0 0; display: block; 
+									line-height: 22px; padding: 7px 0 5px 18px; } 								
+a.RGlobalBlackButton 				{background: transparent url('/Content/button/button_right_black.png') no-repeat top right; 
+									display: block;	float: right; height: 34px; margin-right: 6px; 
+									padding-right: 20px; text-decoration: none; font-family: Arial, Helvetica, sans-serif; 
+									font-size:12px; font-weight:bold;}
+a.RGlobalBlackButton:hover span		{background-position: 0 -34px; }
+a.RGlobalBlackButton:hover			{background-position: right -34px;}
+
+/* GLOBAL BLACK SHORT BUTTON *****************************/
+a.SGlobalBlackButton span 			{background: transparent url('/Content/button_short_black.png') no-repeat 0 0; display: block; 
+									line-height: 22px; padding: 7px 0 5px 18px; } 								
+a.SGlobalBlackButton 				{background: transparent url('/Content/button_right_black.png') no-repeat top right; 
+									display: block;	float:none; height: 34px; margin-right: 6px; 
+									padding-right: 20px; text-decoration: none; font-family: Arial, Helvetica, sans-serif; 
+									font-size:12px; font-weight:bold;}
+a.SGlobalBlackButton:hover span		{background-position: 0 -34px; }
+a.SGlobalBlackButton:hover			{background-position: right -34px;}
+
+

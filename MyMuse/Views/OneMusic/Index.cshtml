@@ -1,0 +1,35 @@
+﻿@model List<MyMuse.Models.Album>
+
+<link href="~/Content/themes/base/jquery.ui.all.css" rel="stylesheet" />
+
+<section style="justify-content:center">
+<form id="form1">
+    <div style="width: 30%; margin: 0 auto;">
+        <div id="result" style="font-family: Tahoma; font-size: 0.9em; color: darkgray; margin-top: 1px; padding-bottom: 1px">
+            Initializing ...
+        </div>
+        <div id="progressbar" style="width: 300px; height: 15px"></div>
+       @* <div id="resultb" style="font-family: Tahoma; font-size: 0.9em; color: darkgray; margin-top: 1px; padding-bottom: 1px"></div>*@
+    </div>
+</form>
+</section>
+
+<div class='row'>
+    <br /><br />
+</div>
+<div class='row'>
+<br /><br />
+</div>
+<section>
+@Html.Partial("_carousel");
+</section> 
+@section scripts
+    {
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/scripts/jquery-ui.min-1.11.1.js"></script>
+@*<script src="~/Scripts/ui.core.js"></script>
+<script src="~/Scripts/ui.progressbar.js"></script>*@
+<script src="~/Scripts/jquery.signalR-2.1.1.js"></script>
+<script src="~/signalr/hubs"></script>
+<script src="~/Scripts/progress.js"></script>
+    }

@@ -1,0 +1,31 @@
+﻿@model PagedList.IPagedList<MyMuse.Models.Album>
+@using PagedList.Mvc;
+
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+<div class="text-right">
+        @Html.PagedListPager(Model, page => Url.Action("idxAlbum", new { page }))
+</div>
+    <div class="wrapping fragment">
+        <div id="wrappingFlexbox">
+            @foreach (var item in Model)
+            {
+                <figure>
+                    <a href="@Url.Action("oneAlbum", "OneMusic", new { ID = item.AlbumGuid })">
+                        <img src="@Url.Action("Thumbnail", "OneMusic", new{original=item.AlbumArtUrl,ht=100,wd=100})" alt="no image" />
+                        @*<img src="file://@item.AlbumArtUrl" alt=@item.AlbumArtUrl>*@
+                    </a>
+                    <figcaption>
+                        <small>
+                            @item.AlbumName
+                        </small>
+                    </figcaption>
+                </figure>
+            }
+        </div>
+    </div>
+<div class="row">
+    <p class="text-right">
+        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+    </p>
+</div>

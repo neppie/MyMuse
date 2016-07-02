@@ -1,0 +1,60 @@
+﻿@model MyMuse.Models.AlbumView
+@section Scripts{
+@*<script src="~/Scripts/multi-uploader.js"></script>*@
+<script src="//js.live.net/v5.0/wl.js"></script>
+<script src="~/Scripts/multi-onedrive.js"></script>
+}
+<div class="distributed fragment">
+    <div id="flex3070Distribute">
+        <div>
+            <h3>@Model.Artist</h3>
+    @if (!String.IsNullOrEmpty(Model.AlbumArtUrl))
+    {
+            <figure>
+                @if (Model.AlbumArtUrl.Substring(0, 1) == "/")
+                {   <img src="~@Model.AlbumArtUrl" />}
+                else
+                {
+                    <img src="@Url.Action("Thumbnail", "OneMusic", new{original=Model.AlbumArtUrl,ht=200,wd=200})" alt="no image" />
+                }
+                <figcaption>
+                    @Model.AlbumName
+                </figcaption>
+            </figure>
+        <p></p>
+    }
+    @*<section>
+        <form class="fileUpload">
+            <input id="fupload1" type="button" value="SEND FILE(s)" class="btn btn-primary" />
+            <input id="file1" name="file1" type="file" multiple="multiple" />
+        </form>
+    </section>*@
+               
+            <section>
+         @*  <form>
+                <input id="file" name="file" type="file" />
+            </form>      
+
+            <button onclick="uploadFile()">Save file directly (calling WL.upload)</button>
+                <button onclick="uploadFile_fileDialog()">Save file directly (calling uploadFile_fileDialog())</button>
+            <div id="uploadFile_div">OneDrive save button to appear here</div>
+            <div id="signin"></div>
+            <label id="info"></label>*@
+               
+          @*<a class="GlobalBlackButton" href="@Url.Action("UpGoogle", "OneMusic", new {UpLoadFileName = Model.FileURI[0]})"><span>SEND</span></a>*@
+          <a class="GlobalBlackButton" href="@Url.Action("Contact", "Home", new {UpLoadFileName = Model.FileURI[0]})"><span>QUEUE <i class="fa fa-share"></i></span>
+                </a>
+               
+          @*<div id="result"></div>
+            <div id="error"></div>*@
+            </section>
+</div>
+        <div>
+            <h5>These songs will be transfered,</h5>         
+            <p style="font-size: small">
+                @foreach (var Furi in Model.FileURI)
+                { @Furi <br /> }
+            </p>
+        </div>
+    </div>
+</div>
